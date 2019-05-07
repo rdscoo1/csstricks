@@ -11,8 +11,8 @@
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-areas:
-    ". mixup mixup . code-1 design-2"
-    "design-1 article-1 . article-2 . ."
+    ". mixup mixup . article-1 design-2"
+    "design-1 article-2 . code-1 . ."
     ". card-1 code-2 article-3 . design-3"
     ". card-2 . . article-4 .";
   margin: 200px 0;
@@ -63,13 +63,16 @@
 
     &._article-1 {
       grid-area: article-1;
+      border-left: @border;
+      border-top: @border;
+      border-top-left-radius: @border-radius;
+      transform: translateX(-@border-width);
+      width: calc(100% + @border-width);
     }
 
     &._article-2 {
       grid-area: article-2;
-      border-bottom: @border;
-      border-right: @border;
-      border-bottom-right-radius: @border-radius;
+
 
     }
 
@@ -89,11 +92,9 @@
 
     &._code-1 {
       grid-area: code-1;
-      border-left: @border;
-      border-top: @border;
-      border-top-left-radius: @border-radius;
-      transform: translateX(-@border-width);
-      width: calc(100% + @border-width);
+      border-bottom: @border;
+      border-right: @border;
+      border-bottom-right-radius: @border-radius;
     }
 
     &._code-2 {
@@ -115,8 +116,9 @@
 
     &._card-2 {
       grid-area: card-2;
-      border: @border-width solid @border-color;
-      border-top-color: transparent;
+      border-right: @border-width solid @border-color;
+      border-left: @border-width solid @border-color;
+      border-bottom: @border-width solid @border-color;
       border-bottom-left-radius: @border-radius;
       border-bottom-right-radius: @border-radius;
     }
