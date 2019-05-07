@@ -1,0 +1,16 @@
+.container {
+  &._flex-articles {
+    display: flex;
+    width: 100vw;
+  }
+
+  &._grid-articles {
+    display: grid;
+    grid-template-columns: 300px minmax(0, 1fr);
+    grid-gap: 5.33rem;
+
+    @media all and (max-width: 799px){
+      grid-template-columns: 1fr;
+    }
+  }
+}

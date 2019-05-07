@@ -1,0 +1,246 @@
+@font-face {
+  font-family: Rubik;
+  src: url(../../fonts/Rubik-Bold.ttf);
+}
+
+.article {
+  position: relative;
+  z-index: 10;
+  margin: 0;
+  padding: 0;
+  font-family: -system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+  &__meta {
+    display: flex;
+    font-size: 16px;
+    margin-bottom: 10px;
+
+    &-type {
+      color: #fff;
+      margin-right: 6px;
+    }
+
+    &-date {
+      color: #7a7a8c;
+    }
+  }
+
+  &__header {
+    margin-bottom: 30px;
+    font-size: 32px;
+    font-weight: 700;
+    font-family: Rubik, Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+  }
+
+  &__author {
+    display: grid;
+    grid-template-columns: 80px auto 1fr;
+    grid-gap: .5rem 2rem;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 0 0 30px 0;
+
+    &-item-header {
+      color: #7a7a8c;
+    }
+
+    &-item-link {
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+    }
+
+    &-photo {
+      position: relative;
+    ;
+    }
+  }
+
+  &__content {
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #c2c2c2;
+    overflow-wrap: break-word;
+  }
+
+  &__tags {
+    margin: 0;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    padding: 10px 0 20px;
+    list-style: none;
+    font-size: 13.2px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  &__icon {
+    &._photo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      filter: grayscale(.75);
+    }
+
+    &._photo-card {
+      width: 40px;
+      height: 40px;
+    }
+
+    &._half-circle {
+      position: absolute;
+      stroke: url(#orange-to-pink);
+      fill: transparent;
+      width: 80px;
+      height: 56px;
+      stroke-width: 8;
+      stroke-linecap: round;
+      bottom: -14px;
+      left: -9px;
+    }
+
+    &._half-circle-card {
+      width: 60px;
+      height: 48px;
+    }
+
+    &._arrow {
+      width: 24px;
+      height: 24px;
+      margin-left: 8px;
+      stroke: url(#paint0_linear);
+    }
+  }
+
+
+  &._small {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+    .article__meta {
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .article__header {
+      font-size: 20px;
+    }
+
+    .article__author {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 0;
+      margin-top: 60px;
+      grid-gap: 0;
+
+      &-photo {
+        margin-right: 25px;
+      }
+    }
+
+
+    .article__separator {
+      flex-grow: 1;
+    }
+
+    .article__author-item {
+      font-size: 14px;
+    }
+
+    @media (max-width: 800px) {
+      .article__author {
+        margin-top: 100px;
+      }
+    }
+  }
+
+  &._size-s {
+    display: flex;
+    flex-direction: column;
+    height: 423px;
+    width: 300px;
+    background: #17141d;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: -1rem 0 3rem #000;
+    transition: .2s;
+
+    .article__author {
+      display: flex;
+      grid-gap: 0;
+      justify-content: flex-start;
+      margin-bottom: 0;
+
+      &-photo {
+        margin-right: 25px;
+      }
+    }
+
+    .article__meta {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .article__header {
+      font-size: 20px;
+    }
+
+    .article__separator {
+      flex-grow: 1;
+    }
+
+    .article__author-item {
+      font-size: 14px;
+    }
+
+    .article__tags {
+      font-size: 10px;
+    }
+
+    @media (max-width:1200px) {
+      width: 200px;
+    }
+  }
+
+  &._top {
+    .article__meta-type {
+      font-weight: 700;
+    }
+
+    .article__header {
+      font-size: 56px;
+    }
+
+    @media (max-width: 1200px) {
+      .article__header {
+        font-size: 42px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .article__header {
+        font-size: 32px;
+      }
+    }
+  }
+
+  @media (max-width: 1200px) {
+    &__header {
+      font-size: 30px;
+    }
+  }
+
+  @media (max-width: 799px) {
+    &__header {
+      font-size: 26px;
+    }
+
+    &__author {
+      font-size: 14px;
+    }
+  }
+}

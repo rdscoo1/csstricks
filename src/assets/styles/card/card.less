@@ -1,0 +1,80 @@
+@import "mini-card.less";
+@import "../mixins/mixins.less";
+
+.card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-image: linear-gradient(to top, #ff8a00, #da1b60);
+  border-radius: 16px;
+  padding: 40px;
+  margin-top: 20px;
+  width: 320px;
+  height: 439px;
+  color: @base-color;
+
+
+  &__header {
+    font-size: 32px;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+  }
+
+  &__subheader{
+    font-size: 16px;
+    margin: 0;
+  }
+
+  &__link{
+    position: relative;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    color: @base-color;
+
+    &::after{
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 95px;
+      bottom: -5px;
+      left: 0;
+      background-color: @base-color;
+    }
+  }
+}
+
+
+@media all and (max-width: 1200px){
+  .card{
+    flex-direction: row;
+    flex-wrap: wrap;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    width: 130px;
+    justify-content: center;
+    padding: 32px;
+
+    &__header{
+      height: 100%;
+    }
+
+    &__subheader{
+      margin-bottom: 15px;
+    }
+
+    &__link{
+      &::after{
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 73px;
+        bottom: 0;
+        left: -3px;
+        background-color: @base-color;
+      }
+
+    }
+  }
+}

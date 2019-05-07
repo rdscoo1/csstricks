@@ -1,0 +1,182 @@
+@import "../mixins/mixins.less";
+
+@border-width: 4px;
+@border-radius: 30px;
+@border-radius-s: 16px;
+@border-color: #da1b60;
+@border: @border-width solid @border-color;
+
+.mixup {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas:
+    ". mixup mixup . code-1 design-2"
+    "design-1 article-1 . article-2 . ."
+    ". card-1 code-2 article-3 . design-3"
+    ". card-2 . . article-4 .";
+  margin: 200px 0;
+
+  &__header {
+    font-family: Rubik, Lato, "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+    grid-area: mixup;
+    color: @base-color;
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  &__star {
+    z-index: 1;
+    position: absolute;
+    top: 5%;
+    right: 16.66%;
+    width: 56.14%;
+    height: 100%;
+    fill: url(#orange-to-pink);
+  }
+
+  &__item {
+    background-color: #100e17;
+    z-index: 10;
+    color: @base-color;
+    padding: 30px;
+
+
+    &._design-card-1 {
+      grid-area: design-1;
+      background: linear-gradient(225.71deg, #110e17 -5.46%, #da1b60 55.6%, #ff8a00 103.75%);
+      border-top-right-radius: 20px;
+      border-top: @border;
+      border-right: @border;
+      transform: translateX(4px);
+    }
+
+    &._design-card-2 {
+      grid-area: design-2;
+      border-top: @border;
+    }
+
+    &._design-card-3 {
+      grid-area: design-3;
+      background: linear-gradient(134.47deg, #110e17 0, #da1b60 127.34%, #ff8a00 195.33%);
+    }
+
+    &._article-1 {
+      grid-area: article-1;
+    }
+
+    &._article-2 {
+      grid-area: article-2;
+      border-bottom: @border;
+      border-right: @border;
+      border-bottom-right-radius: @border-radius;
+
+    }
+
+    &._article-3 {
+      grid-area: article-3;
+    }
+
+    &._article-4 {
+      grid-area: article-4;
+    }
+
+    &._code {
+      padding: 90px 30px;
+      font-size: 15px;
+      font-family: "Operator Mono SSm A", "Operator Mono SSm B", "Operator Mono", "Source Code Pro", Menlo, Consolas, Monaco, monospace;
+    }
+
+    &._code-1 {
+      grid-area: code-1;
+      border-left: @border;
+      border-top: @border;
+      border-top-left-radius: @border-radius;
+      transform: translateX(-@border-width);
+      width: calc(100% + @border-width);
+    }
+
+    &._code-2 {
+      box-sizing: border-box;
+      grid-area: code-2;
+      border-left: @border-width solid @border-color;
+      border-top: @border-width solid @border-color;
+      border-top-left-radius: @border-radius;
+      transform: translate(-4px, -4px);
+      width: calc(100% + 5px);
+      height: calc(100% + 4px);
+      z-index: 11;
+    }
+
+    &._card-1 {
+      grid-area: card-1;
+      border-left: @border-width solid @border-color;
+    }
+
+    &._card-2 {
+      grid-area: card-2;
+      border: @border-width solid @border-color;
+      border-top-color: transparent;
+      border-bottom-left-radius: @border-radius;
+      border-bottom-right-radius: @border-radius;
+    }
+
+    &._property {
+      color: #f5d67b;
+    }
+
+    &._punctuation {
+      color: #72e0d1;
+    }
+  }
+
+  @media all and (max-width: 800px) {
+    overflow-x: auto;
+    grid-template-columns: repeat(6, 290px);
+    grid-gap: 20px;
+    grid-template-areas:
+      "mixup . . . . ."
+      "code-1 article-1 article-2 code-2 article-3 article-4";
+
+
+    &__title {
+      margin-bottom: 24px;
+    }
+
+    &__item {
+      border: none !important;
+      top: 0 !important;
+      left: 0 !important;
+      border-radius: @border-radius-s;
+      margin: 0 !important;
+      padding: 16px !important;
+      background-color: @background-color;
+
+      &._code {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-color: transparent;
+        padding: 0;
+      }
+
+      &._code-1 {
+        width: auto;
+        transform: none;
+      }
+
+      &._design-card,
+      &._card-1,
+      &._card-2 {
+        display: none;
+      }
+    }
+
+    &__star {
+      right: -85px;
+      top: 0;
+      width: 275px;
+      height: 275px;
+    }
+  }
+}
